@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#1">
+        <a class="navbar-brand" routerLink="/home">
             <img src="../../../assets/img/hospital_logo.svg" alt="Medkit Logo" />
             MedKit
         </a>
@@ -12,24 +12,36 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="onLocate('home')" aria-current="page" (click)="onRedir('home')">Pacientes</a>
+                    <a class="nav-link" [ngClass]="{
+                        'active': onLocate('/home')
+                    }"
+                        aria-current="page" routerLink="/home">Pacientes</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="onLocate('inventory')"  aria-current="page" (click)="onRedir('inventory')">Inventario</a>
+                    <a class="nav-link" [ngClass]="{
+                        'active': onLocate('/inventory')
+                    }"
+                        aria-current="page" routerLink="/inventory">Inventario</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="onLocate('exp')" aria-current="page" (click)="onRedir('exp')">Expedientes</a>
+                    <a class="nav-link" [ngClass]="{
+                        'active': onLocate('/exp')
+                    }" aria-current="page" routerLink="/exp">Expedientes</a>
                 </li>
 
                 <li class="nav-item" id="medical-center">
-                    <a class="nav-link"  [class.active]="onLocate('medicalc')" aria-current="page" (click)="onRedir('medicalc')">Centro
+                    <a class="nav-link" [ngClass]="{
+                        'active': onLocate('/medicalc')
+                    }" aria-current="page" routerLink="/medicalc">Centro
                         Médico</a>
                 </li>
 
                 <li class="nav-item" id="medical-repo">
-                    <a class="nav-link"  [class.active]="onLocate('reportery')" aria-current="page" (click)="onRedir('reportery')">Reportería</a>
+                    <a class="nav-link" [ngClass]="{
+                        'active': onLocate('/reportery')
+                    }" aria-current="page" routerLink="/reportery">Reportería</a>
                 </li>
             </ul>
 

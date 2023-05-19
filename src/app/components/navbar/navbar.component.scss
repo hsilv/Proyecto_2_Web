@@ -12,7 +12,14 @@ $primary: #133c63;
         margin-left: 2vw;
     }
     a{
-        cursor: pointer;
+        .disabled{
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.5;
+        }
+        .enabled{
+            cursor: pointer;
+        }
     }
 
 }
