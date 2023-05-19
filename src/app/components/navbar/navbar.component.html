@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md bg-primary mb-4">
+<nav class="navbar navbar-expand-md bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="../info/info.html">
+        <a class="navbar-brand" href="#1">
             <img src="../../../assets/img/hospital_logo.svg" alt="Medkit Logo" />
             MedKit
         </a>
@@ -12,24 +12,24 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="onLocate('#1')" aria-current="page" (click)="onRedir('#1')">Pacientes</a>
+                    <a class="nav-link" [class.active]="onLocate('home')" aria-current="page" (click)="onRedir('home')">Pacientes</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="onLocate('#2')"  aria-current="page" (click)="onRedir('#2')">Inventario</a>
+                    <a class="nav-link" [class.active]="onLocate('inventory')"  aria-current="page" (click)="onRedir('inventory')">Inventario</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" [class.active]="onLocate('#3')" aria-current="page" (click)="onRedir('#3')">Expedientes</a>
+                    <a class="nav-link" [class.active]="onLocate('exp')" aria-current="page" (click)="onRedir('exp')">Expedientes</a>
                 </li>
 
                 <li class="nav-item" id="medical-center">
-                    <a class="nav-link"  [class.active]="onLocate('#4')" aria-current="page" (click)="onRedir('#4')">Centro
+                    <a class="nav-link"  [class.active]="onLocate('medicalc')" aria-current="page" (click)="onRedir('medicalc')">Centro
                         Médico</a>
                 </li>
 
                 <li class="nav-item" id="medical-repo">
-                    <a class="nav-link"  [class.active]="onLocate('#5')" aria-current="page" (click)="onRedir('#5')">Reportería</a>
+                    <a class="nav-link"  [class.active]="onLocate('reportery')" aria-current="page" (click)="onRedir('reportery')">Reportería</a>
                 </li>
             </ul>
 

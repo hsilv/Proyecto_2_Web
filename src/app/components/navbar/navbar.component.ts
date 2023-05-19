@@ -8,11 +8,7 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
     location: string = window.location.href;
     onLocate(linkr: string){
-      if(window.location.href === 'http://'+window.location.hostname+':'+window.location.port+'/'+linkr){
-        return true;
-      }else{
-        return false;
-      }
+      return window.location.href.includes('http://'+window.location.hostname+':'+window.location.port+'/'+linkr)
     }
 
     onRedir(linkr: string){
