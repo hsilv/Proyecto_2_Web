@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-md bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="../info/info.html">
+            <img src="../../../assets/img/hospital_logo.svg" alt="Medkit Logo" />
+            MedKit
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="onLocate('#1')" aria-current="page" (click)="onRedir('#1')">Pacientes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="onLocate('#2')"  aria-current="page" (click)="onRedir('#2')">Inventario</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="onLocate('#3')" aria-current="page" (click)="onRedir('#3')">Expedientes</a>
+                </li>
+
+                <li class="nav-item" id="medical-center">
+                    <a class="nav-link"  [class.active]="onLocate('#4')" aria-current="page" (click)="onRedir('#4')">Centro
+                        Médico</a>
+                </li>
+
+                <li class="nav-item" id="medical-repo">
+                    <a class="nav-link"  [class.active]="onLocate('#5')" aria-current="page" (click)="onRedir('#5')">Reportería</a>
+                </li>
+            </ul>
+
+            <button type="button" class="btn btn-primary" id="submitButton">
+                Cerrar Sesión
+            </button>
+            <div class="d-flex" id="profile-image" role="profile">
+                <a class="profile" href="#">
+                    <img src="../../../assets/img/doctor.png" alt="Doctor Profile" id="profile-pic" />
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
