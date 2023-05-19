@@ -14,4 +14,12 @@ export class NavbarComponent {
   onLocate(linkr: string) {
     return (this.location == linkr);
   }
+  onAdmin(linkr: string){
+    console.log(this.location);
+    if(linkr == '/medicalc' || linkr == '/reportery'){
+      return true;
+    }else{
+      return false;
+    }
+  }
 }

@@ -13,34 +13,39 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" [ngClass]="{
-                        'active': onLocate('/home')
+                        'active': onLocate('/home'),
+                        'disabled': onAdmin('/home')
                     }"
                         aria-current="page" routerLink="/home">Pacientes</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" [ngClass]="{
-                        'active': onLocate('/inventory')
+                        'active': onLocate('/inventory'),
+                        'disabled': onAdmin('/inventory')
                     }"
                         aria-current="page" routerLink="/inventory">Inventario</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" [ngClass]="{
-                        'active': onLocate('/exp')
+                        'active': onLocate('/exp'),
+                        'disabled': onAdmin('/exp')
                     }" aria-current="page" routerLink="/exp">Expedientes</a>
                 </li>
 
                 <li class="nav-item" id="medical-center">
                     <a class="nav-link" [ngClass]="{
-                        'active': onLocate('/medicalc')
+                        'active': onLocate('/medicalc'),
+                        'disabled': onAdmin('/medicalc')
                     }" aria-current="page" routerLink="/medicalc">Centro
                         Médico</a>
                 </li>
 
                 <li class="nav-item" id="medical-repo">
                     <a class="nav-link" [ngClass]="{
-                        'active': onLocate('/reportery')
+                        'active': onLocate('/reportery'),
+                        'disabled': onAdmin('/reportery')
                     }" aria-current="page" routerLink="/reportery">Reportería</a>
                 </li>
             </ul>
