@@ -33,6 +33,7 @@
             <label for="inputEspecialidad" class="form-label">Especialidad</label>
             <select class="form-select" aria-label="selectSpecialty" aria-placeholder="Elige" id="specialtyInput">
               <option selected>Elige tu especialidad</option>
+              <option *ngFor="let specialty of specials" [value]="specialty.id_specialty">{{specialty.specialty_name}}</option>
             </select>
           </div>
 
@@ -49,6 +50,7 @@
             <label for="centerInput" class="form-label">Centro Médico</label>
             <select class="form-select" aria-label="selectSpecialty" aria-placeholder="Elige" id="centerInput">
               <option selected>Elige tu centro médico</option>
+              <option *ngFor="let center of centers" [value]="center.id_center">{{center.center_name}}</option>
             </select>
           </div>
 

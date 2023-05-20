@@ -14,30 +14,37 @@ import { ReporteryComponent } from './pages/reportery/reportery.component';
 const routes: Routes = [
   {
     path: 'home',
+    title: 'Pacientes',
     component: HomeComponent,
   },
   {
     path: '',
+    title: 'Bienvenido a MedKit!',
     component: LoginComponent,
   },
   {
     path: 'inventory',
+    title: 'Inventario',
     component: InventoryComponent,
   },
   {
     path: 'exp',
+    title: 'Expedientes',
     component: ExpComponent,
   },
   {
     path: 'medicalc',
+    title: 'Centro Médico',
     component: MedicalCenterComponent,
   },
   {
     path: 'reportery',
+    title: 'Reportería',
     component: ReporteryComponent,
   },
   {
     path: 'register',
+    title: 'Regístrate',
     component: RegisterComponent,
   },
 ];

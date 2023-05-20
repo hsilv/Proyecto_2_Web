@@ -15,10 +15,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { RecordComponent } from './pages/record/record.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ReporteryComponent } from './pages/reportery/reportery.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, ExpComponent, InfoComponent, InventoryComponent, LoginComponent, MedicalCenterComponent, ProfileComponent, RecordComponent, RegisterComponent, ReporteryComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
