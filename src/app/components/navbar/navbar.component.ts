@@ -26,6 +26,9 @@ export class NavbarComponent implements OnInit {
       if(localStorage.getItem('jwt') == (undefined || null)){
         this.router.navigate(['']);
       }
+      if((this.onAdmin(this.router.url))){
+        this.router.navigate(['/home']);
+      }
   }
 
   logOut() {
