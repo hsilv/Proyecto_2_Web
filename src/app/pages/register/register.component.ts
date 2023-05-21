@@ -1,5 +1,9 @@
 import { Component, OnInit, Input, OnChanges, ViewChild } from '@angular/core';
-import { fetchCenters, fetchSpecialties, registerUser } from 'src/app/service/register';
+import {
+  fetchCenters,
+  fetchSpecialties,
+  registerUser,
+} from 'src/app/service/register';
 import { Specialty } from 'src/app/model/doctor.model';
 import { regCenter } from 'src/app/model/medical.model';
 import { Router } from '@angular/router';
@@ -49,6 +53,9 @@ export class RegisterComponent implements OnInit {
   @Input() adminCheckBox: boolean = false;
 
   async ngOnInit(): Promise<void> {
+    if (!(localStorage.getItem('jwt') == (undefined || null))) {
+      this.router.navigate(['/home']);
+    }
     this.specials = await fetchSpecialties();
     this.centers = await fetchCenters();
   }
@@ -106,8 +113,8 @@ export class RegisterComponent implements OnInit {
       speciality: this.specialty,
       username: this.username,
     };
-    if (await registerUser(doctor)){
+    if (await registerUser(doctor)) {
       this.router.navigate(['']);
-    };
+    }
   }
 }
