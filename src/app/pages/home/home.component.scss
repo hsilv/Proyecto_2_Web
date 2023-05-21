@@ -1,0 +1,67 @@
+tbody{
+    max-height: 10px !important;
+    overflow-y: auto !important;
+}
+
+#content-container{
+    max-height: 710px;
+    img{
+        padding: 10px;
+        max-width: 95%;
+    }
+}
+
+.row{
+    max-height: 875px;
+    div{
+        max-height: 875px;
+    }
+    .table-responsive{
+        height: 775px;
+        max-height: 775px;
+        margin-inline: 15px;
+    }
+}
+.card{
+    margin-bottom: 40px;
+    max-height: 710px;
+}
+
+.table-container{
+    max-height: 20px;
+}
+
+.intro {
+    height: 100%;
+  }
+  
+  table td,
+  table th {
+    button{
+        max-height: fit-content;
+        img{
+            max-height: 50px;
+        }
+      }
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .card {
+    border-radius: .5rem;
+  }
+  
+  .table-scroll {
+    border-radius: .5rem;
+    max-height: 80%;
+  }
+  
+  thead {
+    top: 0;
+    position: sticky;
+  }
+
+  #welcomeUser{
+    margin-top: 1vw;
+}
