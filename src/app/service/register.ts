@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 const ip = 'http://127.0.0.1:3000/';
 import { HttpClient } from '@angular/common/http';
-import { Specialty } from '../model/doctor.model';
+import { Doctor, Specialty } from '../model/doctor.model';
 import { regCenter } from '../model/medical.model';
 
 export async function fetchSpecialties() {
@@ -29,7 +29,6 @@ export async function fetchCenters() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
       data.forEach((item: regCenter, index: number, array: []) => {
         centers.push({
           id_center: item.id_center,
@@ -39,4 +38,20 @@ export async function fetchCenters() {
     })
     .catch((error) => console.log(error));
   return centers;
+}
+
+export async function registerUser(doctor: Doctor): Promise<boolean>{
+  return await fetch(ip+"register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+    body: JSON.stringify(doctor),
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      console.log(data)
+      return true;
+    })
+    .catch((error) => {console.log(error); return false;});
 }

@@ -1,88 +1,106 @@
 <div class="container-lg d-flex justify-content-center">
-    <div class="card d-flex align-items-center">
-      <img src="../../../assets/img/hospital_logo.svg" class="card-img-top" alt="Img_Logo" />
-      <h1 class="Text">MedKit</h1>
-      <div class="card-body">
-        <h2 class="card-title">Regístrate</h2>
-        <form>
+  <div class="card d-flex align-items-center">
+    <img src="../../../assets/img/hospital_logo.svg" class="card-img-top" alt="Img_Logo" />
+    <h1 class="Text">MedKit</h1>
+    <div class="card-body">
+      <h2 class="card-title">Regístrate</h2>
+      <form #registerForm="ngForm" (ngSubmit)="true" (change)="onChangeForm()">
 
 
-          <div class="mb-3">
-            <label for="nameInput" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nameInput" placeholder="Ej: Doctor Chapatín">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Nombre</label>
+          <input name="nameInput" type="text" class="form-control" id="nameInput" placeholder="Ej: Doctor Chapatín"
+            [(ngModel)]="name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="addressInput" class="form-label">Dirección</label>
+          <input name="addressInput" type="text" class="form-control" id="addressInput"
+            placeholder="Ej: 5ta. Calle, 4a. Avenida, Zona 5, Flores, Petén" [(ngModel)]="address">
+        </div>
+
+
+        <div class="mb-3">
+          <label for="phoneInput" class="form-label">Número de teléfono</label>
+          <div class="input-group">
+            <span class="input-group-text" id="phone-addon">+502</span>
+            <input required name="phoneInput" required type="number" class="form-control" id="phoneInput"
+              aria-describedby="phone-addon" [(ngModel)]="phone">
           </div>
+        </div>
 
 
-          <div class="mb-3">
-            <label for="addressInput" class="form-label">Dirección</label>
-            <input type="text" class="form-control" id="addressInput"
-              placeholder="Ej: 5ta. Calle, 4a. Avenida, Zona 5, Flores, Petén">
+        <div class="mb-3">
+          <label for="inputEspecialidad" class="form-label">Especialidad</label>
+          <select required class="form-select" aria-label="selectSpecialty" aria-placeholder="Elige" id="specialtyInput"
+            [(ngModel)]="specialty" name="specialtyInput">
+            <option selected disabled value="undefined">Elige una especialidad</option>
+            <option *ngFor="let specialty of specials" [value]="specialty.id_specialty">{{specialty.specialty_name}}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="genreInput" class="form-label">Género</label>
+          <select required class="form-select" aria-label="selectSpecialty" id="genreInput" name="genreInput"
+            [(ngModel)]="gender">
+            <option disabled selected value="undefined">Elige un género</option>
+            <option value="true">Masculino</option>
+            <option value="false">Femenino</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="centerInput" class="form-label">Centro Médico</label>
+          <select required class="form-select" aria-label="selectSpecialty" aria-placeholder="Elige" id="centerInput"
+            name="centerInput" [(ngModel)]="center">
+            <option selected disabled value="undefined">Elige tu centro médico</option>
+            <option *ngFor="let center of centers" [value]="center.id_center">{{center.center_name}}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputColegiate" class="form-label">Número de colegiado</label>
+          <input required type="number" class="form-control" id="inputColegiate" aria-describedby="inputColegiate"
+            placeholder="Ej: 989898989" name="collegiateInput" [(ngModel)]="collegiate">
+        </div>
+
+
+        <div class="mb-3">
+          <label for="inputUsername" class="form-label">Username</label>
+          <div class="input-group">
+            <span class="input-group-text" id="userAddon">@</span>
+            <input required type="text" [ngClass]="{
+              'form-control': true,
+              'is-invalid': userTaken,
+              'is-valid': userValid,
+            }" placeholder="Ej: DChapatin" aria-describedby="userAddon" id="inputUsername" name="userInput"
+              [(ngModel)]="username" (change)="onChangeUser()">
           </div>
+          <div class="form-text danger" *ngIf="userTaken">Este usuario ya ha sido tomado, intenta con uno nuevo</div>
+        </div>
 
 
-          <div class="mb-3">
-            <label for="phoneInput" class="form-label">Número de teléfono</label>
-            <div class="input-group">
-              <span class="input-group-text" id="phone-addon">+502</span>
-              <input type="number" class="form-control" id="phoneInput" aria-describedby="phone-addon">
-            </div>
-          </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label">Contraseña</label>
+          <input required type="password" [ngClass]="{
+            'form-control': true,
+            'is-invalid': badPasswords,
+          }" id="inputPassword" aria-describedby="emailHelp" name="inputPassword" [(ngModel)]="password">
+        </div>
 
-
-          <div class="mb-3">
-            <label for="inputEspecialidad" class="form-label">Especialidad</label>
-            <select class="form-select" aria-label="selectSpecialty" aria-placeholder="Elige" id="specialtyInput">
-              <option selected>Elige tu especialidad</option>
-              <option *ngFor="let specialty of specials" [value]="specialty.id_specialty">{{specialty.specialty_name}}</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="genreInput" class="form-label">Género</label>
-            <select class="form-select" aria-label="selectSpecialty" aria-placeholder="Elige" id="genreInput">
-              <option selected>Elige tu género</option>
-              <option value="true">Masculino</option>
-              <option value="false">Femenino</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="centerInput" class="form-label">Centro Médico</label>
-            <select class="form-select" aria-label="selectSpecialty" aria-placeholder="Elige" id="centerInput">
-              <option selected>Elige tu centro médico</option>
-              <option *ngFor="let center of centers" [value]="center.id_center">{{center.center_name}}</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="inputColegiate" class="form-label">Número de colegiado</label>
-            <input type="number" class="form-control" id="inputColegiate" aria-describedby="inputColegiate"
-              placeholder="Ej: 989898989">
-          </div>
-
-
-          <div class="mb-3">
-            <label for="inputUsername" class="form-label">Username</label>
-            <div class="input-group">
-              <span class="input-group-text" id="userAddon">@</span>
-              <input type="text" class="form-control" placeholder="Ej: DChapatin" aria-describedby="userAddon"
-                id="inputUsername">
-            </div>
-          </div>
-
-
-          <div class="mb-3">
-            <label for="inputPassword" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="inputPassword" aria-describedby="emailHelp">
-          </div>
-
-          <div class="mb-3">
-            <label for="inputPasswordRe" class="form-label">Repite tu contraseña</label>
-            <input type="password" class="form-control" id="inputPasswordRe" aria-describedby="emailHelp">
-          </div>
-          <div class="alert alert-danger" role="alert" id="alert"></div>
-        </form>
-        <button type="button" class="btn btn-primary" id="submitButton">Registrarse</button>
-      </div>
+        <div class="mb-3">
+          <label for="inputPasswordRe" class="form-label">Repite tu contraseña</label>
+          <input required type="password" [ngClass]="{
+            'form-control': true,
+            'is-invalid': badPasswords,
+          }" id="inputPasswordRe"  name="inputPasswordRe" [(ngModel)]="rePassword"  (change)="checkPasswords()">
+          <div class="form-text danger" *ngIf="badPasswords">Las contraseñas no coinciden!</div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" id="submitButton"
+          [disabled]="formDisabled" (click)="registerUser()">Registrarse</button>
+      </form>
     </div>
   </div>
+</div>
