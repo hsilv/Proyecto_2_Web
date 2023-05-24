@@ -1,0 +1,51 @@
+tbody{
+    max-height: 10px !important;
+    overflow-y: auto !important;
+}
+
+.row{
+    max-height: 875px;
+    div{
+        max-height: 875px;
+    }
+    .table-responsive{
+        height: 775px;
+        max-height: 775px;
+        margin-inline: 15px;
+    }
+}
+
+.table-container{
+    max-height: 20px;
+}
+
+.intro {
+    height: 100%;
+  }
+  
+  table td,
+  table th {
+    button{
+        max-height: fit-content;
+        img{
+            max-height: 35px;
+        }
+      }
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .card {
+    border-radius: .5rem;
+  }
+  
+  .table-scroll {
+    border-radius: .5rem;
+    max-height: 80%;
+  }
+  
+  thead {
+    top: 0;
+    position: sticky;
+  }

@@ -1,0 +1,21 @@
+<div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true">
+    <table class="table table-light mb-0">
+        <thead style="background-color: white">
+            <tr class="text-uppercase">
+                <th scope="col" *ngFor="let col of headers">{{col}}</th>
+            </tr>
+        </thead>
+        <tbody id="table-body" class="table-group-divider">
+            <tr class="align-middle" *ngFor="let row of rowData">
+                <td class="align-middle" *ngFor="let data of row; let last = last">
+                    {{data}}
+                </td>
+                <td class="align-middle" >
+                   <button type="button" class="btn btn-light" id="exp-{{row[0]}}">
+                    <img alt="View Icon" src="../../../assets/img/search.png">
+                   </button>                
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

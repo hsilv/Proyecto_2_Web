@@ -17,9 +17,11 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ReporteryComponent } from './pages/reportery/reportery.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './components/table/table.component';
+import { TableWButtonComponent } from './components/table-wbutton/table-wbutton.component';
+import { TableRawComponent } from './components/table-raw/table-raw.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, ExpComponent, InfoComponent, InventoryComponent, LoginComponent, MedicalCenterComponent, ProfileComponent, RecordComponent, RegisterComponent, ReporteryComponent, TableComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, ExpComponent, InfoComponent, InventoryComponent, LoginComponent, MedicalCenterComponent, ProfileComponent, RecordComponent, RegisterComponent, ReporteryComponent, TableComponent, TableWButtonComponent, TableRawComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { getPatients } from 'src/app/service/home';
 const ip='http://127.0.0.1:3000/';
 import { fetchSpecialties } from 'src/app/service/register';
 
@@ -7,6 +8,18 @@ import { fetchSpecialties } from 'src/app/service/register';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  medUser: string = "";
+  token: string = "";
+  patients!: (string|number|boolean)[][];
+
+  constructor(){
+    this.medUser = localStorage.getItem('medUser')!;
+    this.token = localStorage.getItem('jwt')!;
+  }
+  async ngOnInit() {
+    console.log(localStorage.getItem('medUser'));
+    this.patients = <(string | number | boolean)[][]>(await getPatients(this.medUser, this.token));
+  }
 
 }
