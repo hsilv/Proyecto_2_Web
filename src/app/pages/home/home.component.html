@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container-fluid mb-5">
     <h1 class="home-title d-flex justify-content-center" id="welcomeUser">
-        Bienvenido, usuario!
+        {{docInfo[0]}}
     </h1>
 </div>
 
@@ -9,20 +9,20 @@
     <div class="row">
         <div class="col-3 d-flex justify-content-center card-container">
             <div class="card d-flex align-items-center">
-                <img class="card-img-top" alt="Foto Doctor" id="card-prof-pic" />
+                <img class="card-img-top" alt="Foto Doctor" id="card-prof-pic" src="../../../assets/img/doctor.png"/>
                 <div class="container-fluid">
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title">Doctor</h2>
                         <h5 class="card-text">Nombre</h5>
-                        <p class="card-text" id="doctorName">-</p>
+                        <p class="card-text" id="doctorName">{{docInfo[2]}}</p>
                         <h5 class="card-text">Especialidad</h5>
-                        <p class="card-text" id="specialty">-</p>
+                        <p class="card-text" id="specialty">{{docInfo[3]}}</p>
                         <h5 class="card-text">Dirección</h5>
-                        <p class="card-text" id="address">-</p>
+                        <p class="card-text" id="address">{{docInfo[4]}}</p>
                         <h5 class="card-text">Número de teléfono</h5>
-                        <p class="card-text" id="phone">-</p>
+                        <p class="card-text" id="phone">{{docInfo[5]}}</p>
                         <h5 class="card-text">Número de colegiado</h5>
-                        <p class="card-text" id="colegiate">-</p>
+                        <p class="card-text" id="colegiate">{{docInfo[6]}}</p>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
 
                 </div>
             </div>
-            
+
             <app-table-wbutton [headers]="['ID', 'NOMBRE', 'EVOLUCION', 'ESTADO', 'GÉNERO', 'EDAD', 'EXPEDIENTE']" [rowData]="patients"></app-table-wbutton>
         </div>
     </div>

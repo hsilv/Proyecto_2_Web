@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-wbutton',
@@ -8,8 +9,13 @@ import { Component, Input } from '@angular/core';
 export class TableWButtonComponent {
   @Input() headers: string[];
   @Input() rowData: (string|number|boolean)[][];
-  constructor() {
+  constructor(private router: Router) {
     this.headers = [''];
     this.rowData = [];
+  }
+
+  onClick(ID: number | string | boolean){
+    const query = {ID: ID}
+    this.router.navigate([`/exp`], { queryParams: query});
   }
 }

@@ -38,3 +38,35 @@ export async function getPatients(username: string, token: string){
     })
     .catch((err) => console.log(err));
 }
+
+export async function getDocInfo(token: string, username: string){
+  const data = {
+    username: username,
+  };
+  return await fetch(ip + "getName", {
+    method: "POST",
+    headers: {
+      Authorization: token,
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      let docInfo = []
+      if (data[0].genre) {
+        docInfo.push(`Bienvenida, ${data[0].doctor_name}!`);
+        docInfo.push(false);
+      } else {
+        docInfo.push(`Bienvenido, ${data[0].doctor_name}!`);
+        docInfo.push(true);
+      }
+      docInfo.push(data[0].doctor_name);
+      docInfo.push(data[0].id_specialty);
+      docInfo.push(data[0].direction);
+      docInfo.push("+502 " + data[0].phone_number)
+      docInfo.push(data[0].collegiate_number);
+      return docInfo;
+    })
+    .catch((err) => console.log(err));
+}
