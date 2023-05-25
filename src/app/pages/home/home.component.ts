@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   username: string = "";
   docInfo: (string | boolean)[] = [];
   isButton = true;
+  isLoaded = false;
 
   constructor(){
     this.medUser = localStorage.getItem('medUser')!;
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
     console.log("Usuario:  ", localStorage.getItem('medUser'));
     this.patients = <(string | number | boolean)[][]>(await getPatients(this.medUser, this.token));
     this.docInfo = <(string | boolean)[]>await getDocInfo(this.token, this.medUser);
+    this.isLoaded = true;
   }
 
 }

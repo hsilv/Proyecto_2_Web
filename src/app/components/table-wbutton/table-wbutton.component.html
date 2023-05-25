@@ -7,7 +7,7 @@
         </thead>
         <tbody id="table-body" class="table-group-divider">
             <tr class="align-middle" *ngFor="let row of rowData">
-                <td class="align-middle" *ngFor="let data of row; let last = last">
+                <td class="align-middle text-wrap" *ngFor="let data of row; let last = last">
                     {{data}}
                 </td>
                 <td class="align-middle" *ngIf="isButton">

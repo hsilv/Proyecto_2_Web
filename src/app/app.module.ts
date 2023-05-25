@@ -19,10 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './components/table/table.component';
 import { TableWButtonComponent } from './components/table-wbutton/table-wbutton.component';
 import { TableRawComponent } from './components/table-raw/table-raw.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, ExpComponent, InfoComponent, InventoryComponent, LoginComponent, MedicalCenterComponent, ProfileComponent, RecordComponent, RegisterComponent, ReporteryComponent, TableComponent, TableWButtonComponent, TableRawComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -8,11 +8,12 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   location: string = '';
+  isCollapsed: boolean = false;
   constructor(private router: Router) {
     this.location = this.router.url;
   }
   onLocate(linkr: string) {
-    return this.location == linkr;
+    return this.location.includes(linkr);
   }
   onAdmin(linkr: string) {
     if((localStorage.getItem('admin') === 'false') && (linkr == '/medicalc' || linkr == '/reportery')){
@@ -35,5 +36,9 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('jwt');
     localStorage.removeItem('medUser');
     this.router.navigate(['']);
+  }
+
+  collapse(){
+    this.isCollapsed = !this.isCollapsed;
   }
 }

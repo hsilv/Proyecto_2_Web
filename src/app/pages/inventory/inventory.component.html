@@ -1,23 +1,30 @@
 <app-navbar></app-navbar>
+<div *ngIf="loaded; else elseBlock">
+    <h2 *ngIf="centerName">{{centerName}}</h2>
+    <div class="alert alert-warning" role="alert" id="alert" *ngIf="displayAlert">
+        <span *ngFor="let row of alertText">{{row}}<br></span>
+    </div>
+    <div class="container-fluid" id="content-container">
+        <div class="row">
 
-<h2 *ngIf="centerName">{{centerName}}</h2>
-<div class="alert alert-warning" role="alert" id="alert" *ngIf="displayAlert">
-    <span *ngFor="let row of alertText">{{row}}<br></span>
-  </div>
-<div class="container-fluid" id="content-container">
-    <div class="row">
+            <div class="col-9">
+                <div class="mb-3 container-fluid d-flex align-items-center justify-content-end">
+                    <div class="col-11 d-flex align-items-center justify-content-start">
 
-        <div class="col-9">
-            <div class="mb-3 container-fluid d-flex align-items-center justify-content-end">
-                <div class="col-11 d-flex align-items-center justify-content-start">
-                    
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-end">
+
+                    </div>
                 </div>
-                <div class="col-1 d-flex align-items-center justify-content-end">
 
-                </div>
+                <app-table-wbutton [headers]="['ID', 'NOMBRE', 'STOCK', 'FECHA DE VENCIMIENTO']"
+                    [rowData]="data"></app-table-wbutton>
             </div>
-
-                <app-table-wbutton [headers]="['ID', 'NOMBRE', 'STOCK', 'FECHA DE VENCIMIENTO']" [rowData]="data"></app-table-wbutton>
         </div>
     </div>
 </div>
+<ng-template #elseBlock>
+    <div class="advContainer">
+        <h1>...</h1>
+    </div>
+</ng-template>

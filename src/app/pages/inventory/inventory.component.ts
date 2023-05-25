@@ -20,6 +20,7 @@ export class InventoryComponent implements OnInit{
   data: (number | string)[][] = [];
   displayAlert: boolean = false;
   alertText: string[] = ['Se sugiere comprar los siguientes medicamentos: '];
+  loaded = false;
 
   constructor(){
     this.username = localStorage.getItem('medUser')!;
@@ -44,6 +45,7 @@ export class InventoryComponent implements OnInit{
         }
       })
     }
+    this.loaded = true;
   }
 
 }
