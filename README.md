@@ -1,28 +1,30 @@
-# Proy2
+# Proyecto2 MedKit 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 
-## Development server
+![image](https://github.com/hsilv/Proyecto_2_Web/assets/104613135/84141409-7626-4f49-a0af-a9253cc89f8a)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+MedKit es una aplicación destinada a los médicos y administradores de clínicas y centros médicos en un determinado territorio cuyas clínicas, hospitales, instituciones médicas estén suscritas al servicio. Esto con el objetivo de tener mejor interacción al delegar pacientes, médicos, manejo de inventarios de forma en que estos puedan ponerse de acuerdo entre ellos y brindar un mejor servicio a la población.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologías utilizadas
+- HTML 
+- CSS 
+- JS (TypeScript)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalación (para edición):
+Para poder editar la aplicación, solo hace falta clonar el repositorio de github:
+Dependencias:
+NodeJS
+Angular
+Bootstrap (ngx-bootstrap, @ng-bootstrap, bootstrap)
+Yarn
 
-## Running unit tests
+Una vez con estas dependencias cubiertas, únicamente hace falta colocar el comando ```yarn install``` para que se instalen todas las dependencias intrínsecas del proyecto. 
+Posteriormente, npm run start, para encender un servidor local de desarrollo. Si se desea crear una versión de producción, solo hace falta escribir ```npm run build``` en la consola
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalación (para uso):
+No hace falta instalar nada, únicamente un navegador que pueda acceder al link provisto.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Proyecto_2_Web
+## Autores
+Sebastián Silva y Renatto Guzmán
