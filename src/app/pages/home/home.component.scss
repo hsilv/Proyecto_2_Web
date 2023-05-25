@@ -36,9 +36,19 @@ tbody{
         margin-inline: 15px;
     }
 }
-.card{
+.card-container{
     margin-bottom: 40px;
-    max-height: 710px;
+    min-height: fit-content;
+    max-height: 750px;
+    width:251px;
+    min-width: 250px;
+}
+
+@media (max-width: 767px) {
+  .card-container:first-child {
+    margin: 0 auto;
+    width: 70%;
+  }
 }
 
 .table-container{

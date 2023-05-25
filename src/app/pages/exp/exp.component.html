@@ -4,7 +4,7 @@
     <div *ngIf="isID; else elseBlock">
         <div class="container-fluid" id="content-container">
             <div class="row">
-                <div class="col-3 d-flex justify-content-center card-container">
+                <div class="col-lg-3 col-md-4 col-sm-12 d-flex justify-content-center card-container">
                     <div class="card d-flex align-items-center w-100">
                         <div class="container-fluid">
                             <div class="card-body d-flex flex-column">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-lg-9 col-md-8 col-sm-12">
                     <h4 class="mb-3" id="expName">Expediente de: {{patient[0][1]}}</h4>
                     <h3>Adicciones</h3>
                     <app-table-wbutton [isButton]="false" [headers]="['NOMBRE', 'DESCRIPCION']"
