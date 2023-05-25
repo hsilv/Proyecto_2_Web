@@ -34,20 +34,6 @@
                     }" aria-current="page" routerLink="/exp">Expedientes</a>
                 </li>
 
-                <li class="nav-item" id="medical-center">
-                    <a class="nav-link" [ngClass]="{
-                        'active': onLocate('/medicalc'),
-                        'disabled': onAdmin('/medicalc')
-                    }" aria-current="page" routerLink="/medicalc">Centro
-                        Médico</a>
-                </li>
-
-                <li class="nav-item" id="medical-repo">
-                    <a class="nav-link" [ngClass]="{
-                        'active': onLocate('/reportery'),
-                        'disabled': onAdmin('/reportery')
-                    }" aria-current="page" routerLink="/reportery">Reportería</a>
-                </li>
             </ul>
 
             <button type="button" class="btn btn-primary" id="submitButton" (click)="logOut()">

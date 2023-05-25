@@ -16,8 +16,13 @@
   height: 40px;
   width: 40px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   will-change: transform;
+}
+
+h1{
+  text-align: center;
+  padding: 15%;
 }

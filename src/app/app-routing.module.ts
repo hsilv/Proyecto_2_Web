@@ -32,16 +32,7 @@ const routes: Routes = [
     title: 'Expedientes',
     component: ExpComponent,
   },
-  {
-    path: 'medicalc',
-    title: 'Centro Médico',
-    component: MedicalCenterComponent,
-  },
-  {
-    path: 'reportery',
-    title: 'Reportería',
-    component: ReporteryComponent,
-  },
+  
   {
     path: 'register',
     title: 'Regístrate',
