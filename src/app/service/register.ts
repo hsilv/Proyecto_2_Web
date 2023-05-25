@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-const ip = 'http://127.0.0.1:3000/';
+const ip = 'http://50.16.178.129:3000/';
 import { HttpClient } from '@angular/common/http';
 import { Doctor, Specialty } from '../model/doctor.model';
 import { regCenter } from '../model/medical.model';
