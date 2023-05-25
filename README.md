@@ -21,7 +21,7 @@ Bootstrap (ngx-bootstrap, @ng-bootstrap, bootstrap)
 Yarn
 
 Una vez con estas dependencias cubiertas, únicamente hace falta colocar el comando ```yarn install``` para que se instalen todas las dependencias intrínsecas del proyecto. 
-Posteriormente, npm run start, para encender un servidor local de desarrollo. Si se desea crear una versión de producción, solo hace falta escribir ```npm run build``` en la consola
+Posteriormente, ```npm run start ```, para encender un servidor local de desarrollo. Si se desea crear una versión de producción, solo hace falta escribir ```npm run build``` en la consola
 
 ## Instalación (para uso):
 No hace falta instalar nada, únicamente un navegador que pueda acceder al link provisto.
