@@ -34,7 +34,9 @@ export async function getPatients(username: string, token: string){
           }
         })
       })
+      
       return mapped;
+      
     })
     .catch((err) => console.log(err));
 }
@@ -55,7 +57,7 @@ export async function getDocInfo(token: string, username: string){
     .then((data) => {
       let docInfo = []
       if (data[0].genre) {
-        docInfo.push(`Bienvenida, ${data[0].doctor_name}!`);
+        docInfo.push(`Bienvenida, ${data[0].doctor_name}!`);  
         docInfo.push(false);
       } else {
         docInfo.push(`Bienvenido, ${data[0].doctor_name}!`);

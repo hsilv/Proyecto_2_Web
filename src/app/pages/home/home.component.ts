@@ -18,9 +18,10 @@ export class HomeComponent implements OnInit {
   constructor(){
     this.medUser = localStorage.getItem('medUser')!;
     this.token = localStorage.getItem('jwt')!;
+    
   }
   async ngOnInit() {
-    console.log(localStorage.getItem('medUser'));
+    console.log("Usuario:  ", localStorage.getItem('medUser'));
     this.patients = <(string | number | boolean)[][]>(await getPatients(this.medUser, this.token));
     this.docInfo = <(string | boolean)[]>await getDocInfo(this.token, this.medUser);
   }
