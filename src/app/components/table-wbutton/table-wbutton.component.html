@@ -10,9 +10,9 @@
                 <td class="align-middle" *ngFor="let data of row; let last = last">
                     {{data}}
                 </td>
-                <td class="align-middle" >
+                <td class="align-middle" *ngIf="isButton">
                    <button type="button" class="btn btn-light" id="exp-{{row[0]}}" (click)="onClick(row[0])">
-                    <img alt="View Icon" src="../../../assets/img/search.png">
+                    <img alt="View Icon" *ngIf="isButton" src="../../../assets/img/search.png">
                    </button>                
                 </td>
             </tr>

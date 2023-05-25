@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { getDocInfo, getPatients } from 'src/app/service/home';
-import { getMedicalCenter } from 'src/app/service/inventory';
 const ip='http://127.0.0.1:3000/';
 import { fetchSpecialties } from 'src/app/service/register';
+import { getMedicalCenter, getStock } from 'src/app/service/inventory';
 
 @Component({
   selector: 'app-inventory',
@@ -10,24 +10,26 @@ import { fetchSpecialties } from 'src/app/service/register';
   styleUrls: ['./inventory.component.scss']
 })
 
-export class InventoryComponent {
-  // medUser: string = "";
-  // medCenter!: string;
-  // // token: string = "";
-  // // patients!: (string|number|boolean)[][];
-  // // username: string = "";
-  // // docInfo: (string | boolean)[] = [];
+export class InventoryComponent implements OnInit{
+  username: string = "";
+  token: string = "";
+  centerName: string = "";
+  centerId: number = 99999999;
+  data: (number | string)[][] = [];
 
-  // constructor(){
-  //   //this.medUser = localStorage.getItem('medUser')!;
-  //   //this.token = localStorage.getItem('jwt')!;
-  // }
-  // async ngOnInit() {
-  //   console.log(localStorage.getItem('medUser'));
-
-    //this.medCenter = <(string)> await getMedicalCenter(this.medUser, this.token);
-    //this.patients = <(string | number | boolean)[][]>(await getPatients(this.medUser, this.token));
-    //this.docInfo = <(string | boolean)[]>await getDocInfo(this.token, this.medUser);
+  constructor(){
+    this.username = localStorage.getItem('medUser')!;
+    this.token = localStorage.getItem('jwt')!;
   }
+  async ngOnInit() {
+    console.log(this.username)
+    console.log(this.token)
+    const center = await getMedicalCenter(this.username, this.token)
+    this.centerName = center.center_name;
+    this.centerId = center.id_center;
+    this.data = <(number | string)[][]> await getStock(this.centerId, this.token); 
+  }
+
+}
 
 

@@ -1,7 +1,6 @@
 <app-navbar></app-navbar>
 
-<!-- <h2>Hospital: {{medCenter}}</h2> -->
-<!-- 
+<h2 *ngIf="centerName">{{centerName}}</h2>
 <div class="container-fluid" id="content-container">
     <div class="row">
 
@@ -15,7 +14,7 @@
                 </div>
             </div>
 
-                <app-table-wbutton [headers]="['ID', 'NOMBRE', 'EVOLUCION', 'ESTADO', 'GÉNERO', 'EDAD', 'EXPEDIENTE']" [rowData]="patients"></app-table-wbutton>
+                <app-table-wbutton [headers]="['ID', 'NOMBRE', 'STOCK', 'FECHA DE VENCIMIENTO']" [rowData]="data"></app-table-wbutton>
         </div>
     </div>
-</div> -->
+</div>

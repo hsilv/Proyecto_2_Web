@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class TableWButtonComponent {
   @Input() headers: string[];
   @Input() rowData: (string|number|boolean)[][];
+  @Input() isButton: boolean = false;
   constructor(private router: Router) {
     this.headers = [''];
     this.rowData = [];

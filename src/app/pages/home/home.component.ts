@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   patients!: (string|number|boolean)[][];
   username: string = "";
   docInfo: (string | boolean)[] = [];
+  isButton = true;
 
   constructor(){
     this.medUser = localStorage.getItem('medUser')!;
