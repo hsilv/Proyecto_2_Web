@@ -1,6 +1,9 @@
 <app-navbar></app-navbar>
 
 <h2 *ngIf="centerName">{{centerName}}</h2>
+<div class="alert alert-warning" role="alert" id="alert" *ngIf="displayAlert">
+    <span *ngFor="let row of alertText">{{row}}<br></span>
+  </div>
 <div class="container-fluid" id="content-container">
     <div class="row">
 
